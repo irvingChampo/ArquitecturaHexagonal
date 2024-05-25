@@ -10,6 +10,7 @@ app.use(express.json());
 const customerRepository = new MySQLCustomerRepository();
 const addCustomerUseCase = new AddCustomerUseCase(customerRepository);
 
+//Rutas
 app.post('/customers', async (req: Request, res: Response) => {
     try {
         const { firstName, lastName, email } = req.body;
@@ -20,7 +21,7 @@ app.post('/customers', async (req: Request, res: Response) => {
     }
 });
 
-
+//Servidor
 app.listen(port, () => {
     console.log(`Servidor iniciado en http://localhost:${port}`);
 });
