@@ -5,14 +5,12 @@ import { MySQLCustomerRepository } from './infrastructure/MySQLCustomerRepositor
 const app = express();
 const port = 3000;
 
-// Middleware para manejar datos JSON
 app.use(express.json());
 
-// Crear una instancia del caso de uso y del repositorio
 const customerRepository = new MySQLCustomerRepository();
 const addCustomerUseCase = new AddCustomerUseCase(customerRepository);
 
-// Ruta para agregar un nuevo cliente
+// Rutas
 app.post('/customers', async (req: Request, res: Response) => {
     try {
         const { firstName, lastName, email } = req.body;
