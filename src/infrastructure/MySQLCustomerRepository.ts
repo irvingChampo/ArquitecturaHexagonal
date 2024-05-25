@@ -3,7 +3,7 @@ import { Customer } from '../domain/Customer';
 import { CustomerRepository } from '../domain/CustomerRepository';
 import { Connection, createConnection } from 'mysql';
 
-// Cargar las variables de entorno desde el archivo .env
+// Cargar las variables de entorno
 config();
 
 console.log(process.env.DB_HOST);
